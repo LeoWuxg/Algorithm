@@ -1,8 +1,6 @@
-package getMinWithStack;
+package chapter1.chapter1_1_getMinWithStack;
 
 import lombok.extern.log4j.Log4j2;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.Stack;
 
@@ -13,11 +11,16 @@ import java.util.Stack;
     2. 设计的栈类型可以使用现成的栈结构
  */
 /*
-解题思路：
+解题思路1：
    使用两个栈，stackData保存元素，stackMin保存每个元素入 stackData 的最小值。
    1. 入栈操作：stackData元素A入栈; 当 stackMin栈为空 或 元素A <= stackMin栈顶元素, 将元素A压入 stackMin栈
    （此时 stackData的当前元素一定是 >= stackMin的栈顶元素）
    2. 出栈操作：stackData 栈顶元素A出栈; 若 元素A = stackMin 栈顶元素，则 stackMin 也出栈操作（这时 stackMin 的栈顶元素一定是最小元素）
+
+解题思路2：
+    与思路1的区别是：在stackData入栈时，若元素 > stackMin栈顶元素，则重复压入 stackMin栈顶元素；否则压入该元素。
+    stackData出栈时，同步对 stackMin进行出栈操作。这样stackMin每次获取栈顶都是最小值。
+    代码省略...
  */
 @Log4j2
 public class MyStack1 {
