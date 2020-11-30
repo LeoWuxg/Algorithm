@@ -26,6 +26,7 @@ public class TwoStacksQueue {
 
     /**
      * 将stackPush栈的数据压入stackPop栈
+     * git
      */
     public void pushToPop() {
         //若 stackPop 为空，直接push
